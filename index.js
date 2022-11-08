@@ -50,6 +50,8 @@ app.get(
           });
         }
         res.json({
+          status: "success",
+          user: req.user,
           token,
         });
       }
