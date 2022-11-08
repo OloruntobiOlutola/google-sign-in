@@ -22,11 +22,8 @@ const passportSetUp = (passport) => {
           console.log("Creating new user...");
           const newUser = new User({
             method: "google",
-            google: {
-              id: profile.id,
-              name: profile.displayName,
-              email: profile.emails[0].value,
-            },
+            name: profile.displayName,
+            email: profile.emails[0].value,
           });
           await newUser.save();
           return done(null, newUser);
